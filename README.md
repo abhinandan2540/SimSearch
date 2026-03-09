@@ -1,6 +1,6 @@
 # SimSearch
 
-### Self-Supervised Image Embedding Search Engine
+### Self-Supervised Image Embedding Retrieval System
 
 SimSearch is a **self-supervised learning based image retrieval system** that learns visual representations from **unlabeled images** and performs **semantic image similarity search** using vector embeddings.
 Instead of training on labeled categories, the model learns to understand visual structure by using **contrastive learning**. After training, images can be converted into embeddings and stored in a vector index to enable **fast image similarity search**.
