@@ -3,13 +3,17 @@
 # in most standard SSL frameworks such as SimCLR, BYOL, MoCo, SimSiam
 # two augmented views of the same image are used to form a positive pair
 from torch.utils.data import Dataset
-from torchvision.datasets import ImageFolder
+from torchvision.datasets import ImageFolder # no need of this due to using inbuilt CIFAR 10 dataset
+# from torchvision.datasets import CIFAR10 # importing CIFAR-10 dataset for simsearch training and testing
+# from PIL import Image
+
+
 
 
 class SimSearchDataset(Dataset):
     def __init__(self, root_dir, transform):
         # root_dir is the directory for images
-        self.dataset = ImageFolder(root_dir)
+        self.dataset = ImageFolder(root=root_dir) # download = True make sures download the dataset in training model
         self.transform = transform  # transformation on the images
 
     def __len__(self):
