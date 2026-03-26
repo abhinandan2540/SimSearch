@@ -9,7 +9,7 @@ import torchvision.transforms as T
 
 # img transform taken from SimCLR
 SimSearch_transform = T.Compose([
-    T.RandomResizedCrop(224, scale=(0.2,1.0)),  # img size 224 pxls
+    T.RandomResizedCrop(224, scale=(0.2, 1.0)),  # img size 224 pxls
     T.RandomHorizontalFlip(),  # horizontal flip
     T.RandomApply([
         T.ColorJitter(  # controlling brightness, saturation, heu
@@ -20,7 +20,7 @@ SimSearch_transform = T.Compose([
         )
     ], p=0.8),
     T.RandomGrayscale(p=0.2),  # grayscaling image
-    T.GaussianBlur(kernel_size=23, sigma=(0.1,2.0)),  # blurring img
+    T.GaussianBlur(kernel_size=23, sigma=(0.1, 2.0)),  # blurring img
     T.RandomRotation(15),
     T.ToTensor()  # transforming img into tensor format
 ])
